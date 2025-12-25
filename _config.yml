@@ -8,33 +8,33 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Sihong Wu"
+title                    : "Ziqian Wang"
 title_separator          : "-"
-name                     : &name "Sihong Wu"
-description              : &description "personal description"
-url                      : "https://tessaaawu.github.io"
+name                     : &name "Ziqian Wang"
+description              : &description "Undergraduate student in ECE at UM-SJTU Joint Institute, researching Robotics and Machine Learning"
+url                      : "https://wzzzzq.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "tessaaawu/tessaaawu.github.io/"
+repository               : "wzzzzq/wzzzzq.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "SquarePhoto.png"
-  name             : "吴思弘 Sihong Wu &#127940;&#127995;&zwj;&#9792;"
-  pronouns         : # example: "she/her"  
-  bio              : 
-                      <strong>Postdoctoral Research Fellow</strong><br>
-  location         : "Cambridge, MA"
-  employer         : "MIT"
+  avatar           : "profile.png"
+  name             : "王子骞 Ziqian Wang"
+  pronouns         : # example: "he/him"
+  bio              :
+                      <strong>Undergraduate Student in ECE</strong><br>
+  location         : "Shanghai, China"
+  employer         : "UM-SJTU Joint Institute"
   uri              : # URL
-  email            : "sihongwu@mit.edu" 
+  email            : "christianwang@sjtu.edu.cn" 
 
   # Academic websites
-  googlescholar    : "https://scholar.google.com/citations?user=pt9B3u0AAAAJ&hl=en&oi=ao"
+  googlescholar    : # URL (add when you have publications)
   impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0002-5584-664X"
+  orcid            : # URL
   semantic         : # URL
   researchgate     : # URL
 
@@ -42,7 +42,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : # URL "academicpages"
+  github           : "wzzzzq"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 

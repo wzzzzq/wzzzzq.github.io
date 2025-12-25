@@ -1,12 +1,44 @@
 ---
 layout: archive
-title: "Footprint &#128099;"
+title: "Footprint"
 permalink: /footprint/
 author_profile: true
 ---
 
+<p>Places I've been to for conferences, research visits, and travels.</p>
 
-<!-- <div style="margin-bottom: 30px; background-color: white; border: 1px solid white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-  <h2 style="margin-top: 0; margin-bottom: 20px; text-align: left;">&#9658; Bayesian inversion based on the invertible neural network (INN)</h2> -->
-  <img src="/images/world_map.png" style="max-width: 100%; height: auto; border-radius: 5px;">
-<!-- </div> -->
+<div id="map" style="height: 400px; width: 100%; border-radius: 10px; margin-bottom: 20px;"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  var map = L.map('map').setView([31.0, 121.4], 4);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  var locations = [
+    {name: "Shanghai, China", lat: 31.2304, lng: 121.4737, type: "home", desc: "Home - Shanghai Jiao Tong University"}
+  ];
+
+  locations.forEach(function(loc) {
+    var color = loc.type === "home" ? "red" : "blue";
+    L.circleMarker([loc.lat, loc.lng], {
+      radius: 8,
+      fillColor: color,
+      color: "#fff",
+      weight: 2,
+      fillOpacity: 0.8
+    }).addTo(map).bindPopup("<b>" + loc.name + "</b><br>" + loc.desc);
+  });
+</script>
+
+<h3>Legend</h3>
+<ul>
+  <li><span style="color: red;">●</span> Home</li>
+  <li><span style="color: blue;">●</span> Conference/Visit</li>
+</ul>
+
+<p><em>More locations will be added as I attend conferences and research visits!</em></p>
