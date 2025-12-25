@@ -45,13 +45,13 @@ author_profile: true
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
   // Initialize map with world view
   var map = L.map('map').setView([20, 0], 2);
 
-  // Use CartoDB Positron for a cleaner look
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CartoDB',
+  // Use OpenStreetMap tiles (more reliable)
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19
   }).addTo(map);
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       fillOpacity: 0.9
     }).addTo(map).bindPopup('<b>' + loc.name + '</b><br>' + loc.desc);
   });
-});
+};
 </script>
 
 <div class="legend">
