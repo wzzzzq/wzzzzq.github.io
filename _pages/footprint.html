@@ -44,20 +44,18 @@ author_profile: true
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+{% raw %}
 <script>
 window.onload = function() {
-  // Initialize map with world view
   var map = L.map('map').setView([20, 0], 2);
 
-  // Use OpenStreetMap tiles (more reliable)
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
+    attribution: '© OpenStreetMap contributors',
     maxZoom: 19
   }).addTo(map);
 
-  // Location data
   var locations = [
-    {name: "Shanghai", lat: 31.2304, lng: 121.4737, type: "home", desc: "Home - Shanghai Jiao Tong University"},
+    {name: "Shanghai", lat: 31.2304, lng: 121.4737, type: "home", desc: "Home - SJTU"},
     {name: "Seoul", lat: 37.5665, lng: 126.9780, type: "travel", desc: "2006-2008"},
     {name: "Copenhagen", lat: 55.6761, lng: 12.5683, type: "travel", desc: "2008-2009, 2025"},
     {name: "Kyoto", lat: 35.0116, lng: 135.7681, type: "travel", desc: "2016"},
@@ -66,16 +64,14 @@ window.onload = function() {
     {name: "Queenstown", lat: -45.0312, lng: 168.6626, type: "travel", desc: "2019"},
     {name: "Tokyo", lat: 35.6762, lng: 139.6503, type: "travel", desc: "2023"},
     {name: "Osaka", lat: 34.6937, lng: 135.5023, type: "travel", desc: "2023"},
-    {name: "Berlin", lat: 52.5200, lng: 13.4050, type: "conference", desc: "2025 - TU Berlin Exchange"},
+    {name: "Berlin", lat: 52.5200, lng: 13.4050, type: "conference", desc: "2025 - TU Berlin"},
     {name: "Innsbruck", lat: 47.2692, lng: 11.4041, type: "travel", desc: "2025 - Austria"},
     {name: "Munich", lat: 48.1351, lng: 11.5820, type: "travel", desc: "2025"},
-    {name: "Hangzhou", lat: 30.2741, lng: 120.1551, type: "conference", desc: "2025 - IROS Conference"}
+    {name: "Hangzhou", lat: 30.2741, lng: 120.1551, type: "conference", desc: "2025 - IROS"}
   ];
 
-  // Color mapping
-  var colors = { home: '#e74c3c', conference: '#3498db', travel: '#2ecc71' };
+  var colors = {home: '#e74c3c', conference: '#3498db', travel: '#2ecc71'};
 
-  // Add markers
   locations.forEach(function(loc) {
     L.circleMarker([loc.lat, loc.lng], {
       radius: 10,
@@ -87,6 +83,7 @@ window.onload = function() {
   });
 };
 </script>
+{% endraw %}
 
 <div class="legend">
   <h4 style="margin-top: 0;">Legend</h4>
