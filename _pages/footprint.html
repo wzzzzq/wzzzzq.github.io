@@ -5,40 +5,99 @@ permalink: /footprint/
 author_profile: true
 ---
 
-<p>Places I've been to for conferences, research visits, and travels.</p>
+<style>
+  .map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+  }
+  .legend {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .home-dot { background: #e74c3c; }
+  .conference-dot { background: #3498db; }
+  .travel-dot { background: #2ecc71; }
+</style>
 
-<div id="map" style="height: 400px; width: 100%; border-radius: 10px; margin-bottom: 20px;"></div>
+<p>Places I've visited for conferences, research, and exploration.</p>
+
+<div class="map-container">
+  <div id="map" style="height: 500px; width: 100%;"></div>
+</div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-  var map = L.map('map').setView([31.0, 121.4], 4);
+  // Initialize map with world view
+  var map = L.map('map').setView([20, 0], 2);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+  // Use CartoDB Positron for a cleaner look
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CartoDB',
+    maxZoom: 19
   }).addTo(map);
 
+  // Location data
   var locations = [
-    {name: "Shanghai, China", lat: 31.2304, lng: 121.4737, type: "home", desc: "Home - Shanghai Jiao Tong University"}
+    {name: "Shanghai", lat: 31.2304, lng: 121.4737, type: "home", desc: "Home - Shanghai Jiao Tong University"},
+    // 2006-2008: South Korea
+    {name: "Seoul", lat: 37.5665, lng: 126.9780, type: "travel", desc: "2006-2008"},
+    // 2008-2009 & 2025: Denmark
+    {name: "Copenhagen", lat: 55.6761, lng: 12.5683, type: "travel", desc: "2008-2009, 2025"},
+    // 2016: Japan
+    {name: "Kyoto", lat: 35.0116, lng: 135.7681, type: "travel", desc: "2016"},
+    {name: "Hiroshima", lat: 34.3853, lng: 132.4553, type: "travel", desc: "2016"},
+    // 2019: New Zealand
+    {name: "Auckland", lat: -36.8485, lng: 174.7633, type: "travel", desc: "2019"},
+    {name: "Queenstown", lat: -45.0312, lng: 168.6626, type: "travel", desc: "2019"},
+    // 2023: Japan
+    {name: "Tokyo", lat: 35.6762, lng: 139.6503, type: "travel", desc: "2023"},
+    {name: "Osaka", lat: 34.6937, lng: 135.5023, type: "travel", desc: "2023"},
+    // 2025: Europe
+    {name: "Berlin", lat: 52.5200, lng: 13.4050, type: "conference", desc: "2025 - TU Berlin Exchange"},
+    {name: "Innsbruck", lat: 47.2692, lng: 11.4041, type: "travel", desc: "2025 - Austria"},
+    {name: "Munich", lat: 48.1351, lng: 11.5820, type: "travel", desc: "2025"},
+    // 2025: Conference
+    {name: "Hangzhou", lat: 30.2741, lng: 120.1551, type: "conference", desc: "2025 - IROS Conference"}
   ];
 
+  // Color mapping
+  var colors = { home: '#e74c3c', conference: '#3498db', travel: '#2ecc71' };
+
+  // Add markers
   locations.forEach(function(loc) {
-    var color = loc.type === "home" ? "red" : "blue";
     L.circleMarker([loc.lat, loc.lng], {
-      radius: 8,
-      fillColor: color,
-      color: "#fff",
+      radius: 10,
+      fillColor: colors[loc.type],
+      color: '#fff',
       weight: 2,
-      fillOpacity: 0.8
-    }).addTo(map).bindPopup("<b>" + loc.name + "</b><br>" + loc.desc);
+      fillOpacity: 0.9
+    }).addTo(map).bindPopup('<b>' + loc.name + '</b><br>' + loc.desc);
   });
 </script>
 
-<h3>Legend</h3>
-<ul>
-  <li><span style="color: red;">●</span> Home</li>
-  <li><span style="color: blue;">●</span> Conference/Visit</li>
-</ul>
+<div class="legend">
+  <h4 style="margin-top: 0;">Legend</h4>
+  <div class="legend-item"><div class="legend-dot home-dot"></div>Home</div>
+  <div class="legend-item"><div class="legend-dot conference-dot"></div>Conference / Research Visit</div>
+  <div class="legend-item"><div class="legend-dot travel-dot"></div>Travel</div>
+</div>
 
-<p><em>More locations will be added as I attend conferences and research visits!</em></p>
+<p><em>More locations will be added as I attend conferences and explore new places!</em></p>

@@ -22,7 +22,7 @@ repository               : "wzzzzq/wzzzzq.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "王子骞 Ziqian Wang"
+  name             : "Ziqian Wang 王子谦"
   pronouns         : # example: "he/him"
   bio              :
                       <strong>Undergraduate Student in ECE</strong><br>
@@ -34,7 +34,7 @@ author:
   # Academic websites
   googlescholar    : # URL (add when you have publications)
   impactstory      : # URL
-  orcid            : # URL
+  orcid            : "https://orcid.org/0009-0001-2973-9429"
   semantic         : # URL
   researchgate     : # URL
 
@@ -54,9 +54,9 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : # Username
+  instagram        : "ziqianw2006"
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "ziqian-wang-0b9819380"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -64,7 +64,7 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : # Username for X / Twitter
+  twitter          : "Christian061145"
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username

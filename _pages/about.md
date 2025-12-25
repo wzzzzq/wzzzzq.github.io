@@ -8,13 +8,13 @@ redirect_from:
 ---
 
 
-<h3>Hi there, I'm Ziqian Wang</h3>
+<h3>Hi there, I'm Ziqian Wang 王子谦</h3>
 <p align = "justify">
 I am an undergraduate student pursuing a Bachelor of Engineering in Electrical and Computer Engineering at the <a href="https://www.ji.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">UM-SJTU Joint Institute</a>, <a href="https://en.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Shanghai Jiao Tong University</a> (Class of 2028).
 </p>
 
 <p align = "justify">
-Currently, I am a Research Assistant at <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">ScaleLab@SJTU</a>, working on efficient one-step flow matching visuomotor policies for Vision-Language-Action (VLA) models under the supervision of Professor Yao Mu. I also serve as a Teaching Assistant for ECE280 (Programming & Data Structures).
+Currently, I am a Research Assistant at ScaleLab@SJTU, working on efficient one-step flow matching visuomotor policies for Vision-Language-Action (VLA) models under the supervision of <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">Professor Yao Mu</a>. I also serve as a Teaching Assistant for ECE280 (Programming & Data Structures).
 </p>
 
 <p align = "justify">
