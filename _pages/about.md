@@ -14,7 +14,7 @@ I am an undergraduate student pursuing a Bachelor of Engineering in Electrical a
 </p>
 
 <p align = "justify">
-Currently, I am a Research Assistant at ScaleLab@SJTU, working on efficient one-step flow matching visuomotor policies for Vision-Language-Action (VLA) models under the supervision of <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">Professor Yao Mu</a>. I also serve as a Teaching Assistant for ECE280 (Programming & Data Structures).
+Currently, I am a Research Assistant at ScaleLab@SJTU, working on Reinforcement Learning for robotics policies under the supervision of <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">Professor Yao Mu</a>. I also serve as a Teaching Assistant for ECE280 (Programming & Data Structures).
 </p>
 
 <p align = "justify">
@@ -26,9 +26,8 @@ Previously, I participated in the GIFT Future Scholar Plan, focusing on reinforc
 </p>
 
 <ul>
-<li>Robotics and Embodied AI</li>
+<li>Robot Learning and Embodied AI</li>
 <li>Reinforcement Learning</li>
-<li>Vision-Language-Action Models</li>
 <li>Machine Learning and Deep Learning</li>
 </ul>
 
