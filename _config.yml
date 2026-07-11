@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Ziqian Wang"
 title_separator          : "-"
 name                     : &name "Ziqian Wang"
-description              : &description "Undergraduate student in ECE at UM-SJTU Joint Institute, researching Robotics and Machine Learning"
+description              : &description "Incoming CS undergraduate at the University of Michigan, Ann Arbor, researching Robot Learning, Reinforcement Learning, and Embodied AI"
 url                      : "https://wzzzzq.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wzzzzq/wzzzzq.github.io"
@@ -25,11 +25,11 @@ author:
   name             : "Ziqian Wang 王子谦"
   pronouns         : # example: "he/him"
   bio              :
-                      <strong>Undergraduate Student in ECE</strong><br>
-  location         : "Shanghai, China"
-  employer         : "UM-SJTU Joint Institute"
+                      <strong>Incoming CS Undergraduate</strong><br>
+  location         : "Ann Arbor, MI"
+  employer         : "University of Michigan"
   uri              : # URL
-  email            : "christianwang@sjtu.edu.cn" 
+  email            : "ziqianww@umich.edu"
 
   # Academic websites
   googlescholar    : # URL (add when you have publications)

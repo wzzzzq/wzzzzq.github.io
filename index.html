@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ziqian Wang 王子谦</title>
+<meta name="description" content="Ziqian Wang (王子谦) — Computer Science undergraduate at the University of Michigan, Ann Arbor, researching reinforcement learning for robotics and embodied AI.">
+<meta property="og:title" content="Ziqian Wang 王子谦">
+<meta property="og:description" content="CS undergraduate at the University of Michigan, Ann Arbor. Robot learning, reinforcement learning, embodied AI.">
+<meta property="og:url" content="https://wzzzzq.github.io/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --mute: #666;
+    --link: #00274c;
+    --rule: #e2ded6;
+    --bg: #fffefb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Source Serif 4", Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .page { max-width: 780px; margin: 0 auto; padding: 56px 24px 48px; }
+
+  a { color: var(--link); text-decoration: underline; text-decoration-color: #b9c4cf; text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--link); }
+
+  /* header */
+  .head { display: flex; gap: 32px; align-items: flex-start; justify-content: space-between; }
+  h1 { font-size: 2rem; font-weight: 600; line-height: 1.25; }
+  h1 .zh { font-weight: 400; color: var(--mute); font-size: 1.5rem; margin-left: 8px; }
+  .tagline { margin-top: 6px; color: var(--mute); }
+  .contact { margin-top: 14px; font-size: .95rem; }
+  .contact a { margin-right: 4px; }
+  .contact span { color: #bbb; margin: 0 6px; }
+  .photo {
+    width: 150px; height: 150px; flex-shrink: 0;
+    object-fit: cover; border-radius: 6px;
+  }
+  @media (max-width: 560px) {
+    .head { flex-direction: column-reverse; }
+    .photo { width: 120px; height: 120px; }
+  }
+
+  /* sections */
+  h2 {
+    font-size: 1.25rem; font-weight: 600;
+    margin: 44px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  p + p { margin-top: 12px; }
+  .intro { margin-top: 32px; }
+
+  /* news */
+  .news { list-style: none; }
+  .news li { display: flex; gap: 18px; padding: 4px 0; }
+  .news .d { color: var(--mute); font-size: .92rem; flex-shrink: 0; width: 88px; padding-top: 2px; }
+  @media (max-width: 560px) { .news li { flex-direction: column; gap: 0; } }
+
+  /* publications */
+  .pub { margin-bottom: 20px; }
+  .pub .t { font-weight: 600; }
+  .pub .a, .pub .v { font-size: .95rem; }
+  .pub .a { color: var(--mute); }
+  .pub .v { color: var(--mute); font-style: italic; }
+  .pub .v b { font-style: normal; color: var(--ink); font-weight: 600; }
+
+  /* experience / education */
+  .item { margin-bottom: 16px; }
+  .item .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .item .org { font-weight: 600; }
+  .item .date { color: var(--mute); font-size: .92rem; white-space: nowrap; }
+  .item .sub { color: var(--mute); font-size: .95rem; }
+  .item .desc { font-size: .97rem; margin-top: 2px; }
+
+  ul.plain { padding-left: 20px; }
+  ul.plain li { margin: 3px 0; }
+
+  .skills { font-size: .97rem; }
+  .skills b { font-weight: 600; }
+
+  footer {
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    color: var(--mute); font-size: .88rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <div>
+      <h1>Ziqian Wang<span class="zh">王子谦</span></h1>
+      <p class="tagline">CS undergraduate, University of Michigan, Ann Arbor</p>
+      <p class="contact">
+        <a href="mailto:ziqianww@umich.edu">Email</a><span>·</span>
+        <a href="https://github.com/wzzzzq">GitHub</a><span>·</span>
+        <a href="https://www.linkedin.com/in/ziqian-wang-0b9819380">LinkedIn</a><span>·</span>
+        <a href="https://orcid.org/0009-0001-2973-9429">ORCID</a><span>·</span>
+        <a href="/files/ziqian_wang_resume.pdf">Résumé</a>
+      </p>
+    </div>
+    <img class="photo" src="/images/profile.png" alt="Ziqian Wang">
+  </div>
+
+  <div class="intro">
+    <p>
+      I am an undergraduate in Computer Science at the
+      <a href="https://cse.engin.umich.edu/">University of Michigan, Ann Arbor</a> (Fall 2026).
+      Previously I studied Electrical and Computer Engineering at
+      <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a>.
+    </p>
+    <p>
+      I am interested in building embodied agents that interact with the physical world —
+      in particular, how reinforcement learning, foundation models, and world models can be
+      combined to build generalist robots. Currently, I am a research intern at
+      <b>AgiBot</b>, scaling off-policy RL fine-tuning to a real-robot fleet, and at
+      <b>ScaleLab (SJTU)</b> with <a href="https://yaomarkmu.github.io/">Prof. Yao Mu</a>,
+      where I work on RL fine-tuning for vision-language-action policies.
+    </p>
+  </div>
+
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="d">Fall 2026</span><span>Joining the University of Michigan, Ann Arbor as a B.S.E. student in Computer Science.</span></li>
+    <li><span class="d">Jun 2026</span><span>Preprint of <a href="https://arxiv.org/abs/2606.08015">Q-VGM</a>, our off-policy RL fine-tuning method for flow-matching VLA policies, is on arXiv.</span></li>
+    <li><span class="d">May 2026</span><span>Started as a research intern at AgiBot, Shanghai.</span></li>
+    <li><span class="d"></span><span>Scene2Gym is accepted at IROS 2026.</span></li>
+    <li><span class="d">Oct 2025</span><span>Joined ScaleLab @ SJTU as a research intern, advised by Prof. Yao Mu.</span></li>
+  </ul>
+
+  <h2>Publications</h2>
+  <div class="pub">
+    <div class="t">Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies</div>
+    <div class="a"><b>Ziqian Wang</b>, et al.</div>
+    <div class="v"><b>Under review</b> · <a href="https://arxiv.org/abs/2606.08015">arXiv:2606.08015</a></div>
+  </div>
+  <div class="pub">
+    <div class="t">Scene2Gym: Transforming Real-World Scenes into Interactive Training Environments for Robot Learning</div>
+    <div class="a">Second author</div>
+    <div class="v"><b>IROS 2026</b></div>
+  </div>
+
+  <h2>Research Experience</h2>
+  <div class="item">
+    <div class="row"><span class="org">AgiBot, Shanghai — Research Intern</span><span class="date">May 2026 – Present</span></div>
+    <p class="desc">Scaling off-policy RL fine-tuning to a real-robot fleet; building a continual-learning and self-evolution system with human-in-the-loop intervention, so deployed policies keep improving from real-world interaction data.</p>
+  </div>
+  <div class="item">
+    <div class="row"><span class="org">ScaleLab, SJTU — Research Intern</span><span class="date">Oct 2025 – Present</span></div>
+    <p class="sub">Advisor: <a href="https://yaomarkmu.github.io/">Prof. Yao Mu</a></p>
+    <p class="desc">First-author work on Q-VGM, an off-policy RL fine-tuning method for Pi0.5 (a 3B-parameter flow-matching VLA policy), raising average success from 75.0% to 92.5% on LIBERO, 76.4% to 87.2% on RoboTwin 2.0, and 40.0% to 67.5% on real-robot tabletop tasks.</p>
+  </div>
+  <div class="item">
+    <div class="row"><span class="org">Intelligent Vehicles Lab, SJTU — Research Assistant</span><span class="date">Apr 2025 – Oct 2025</span></div>
+    <p class="sub">Advisor: Prof. Qin Tong</p>
+    <p class="desc">Co-developed Scene2Gym (IROS 2026), converting real-world scenes into interactive 3DGS digital twins; led the RL and imitation-learning training pipeline, achieving 56% zero-shot sim-to-real transfer for visual RL policies.</p>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="row"><span class="org">University of Michigan, Ann Arbor</span><span class="date">Fall 2026</span></div>
+    <p class="sub">B.S.E. in Computer Science</p>
+  </div>
+  <div class="item">
+    <div class="row"><span class="org">Shanghai Jiao Tong University</span><span class="date">Sep 2024 – Present</span></div>
+    <p class="sub">B.E. in Electrical and Computer Engineering · GPA 3.95/4.0</p>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <p class="skills"><b>Programming:</b> Python, C++ (NOIP First Prize), MATLAB</p>
+  <p class="skills"><b>Frameworks:</b> PyTorch, MuJoCo, Isaac Gym, ROS, Weights &amp; Biases, Claude Code</p>
+
+  <footer>
+    <span>© 2026 Ziqian Wang</span>
+    <span>ziqianww@umich.edu</span>
+  </footer>
+
+</div>
+</body>
+</html>
