@@ -68,12 +68,28 @@
   @media (max-width: 560px) { .news li { flex-direction: column; gap: 0; } }
 
   /* publications */
-  .pub { margin-bottom: 20px; }
-  .pub .t { font-weight: 600; }
-  .pub .a, .pub .v { font-size: .95rem; }
+  .pub { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 26px; }
+  .pub .thumb {
+    width: 190px; flex-shrink: 0;
+    border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
+    background: #fff;
+  }
+  .pub .thumb img { display: block; width: 100%; height: auto; }
+  .pub .body { min-width: 0; }
+  .pub .t { font-weight: 600; line-height: 1.4; }
+  .pub .t a { text-decoration: none; color: var(--ink); }
+  .pub .t a:hover { text-decoration: underline; }
+  .pub .a, .pub .v, .pub .l { font-size: .95rem; }
   .pub .a { color: var(--mute); }
   .pub .v { color: var(--mute); font-style: italic; }
   .pub .v b { font-style: normal; color: var(--ink); font-weight: 600; }
+  .pub .s { font-size: .93rem; margin-top: 6px; }
+  .pub .l { margin-top: 6px; }
+  .pub .l a { margin-right: 10px; }
+  @media (max-width: 560px) {
+    .pub { flex-direction: column; gap: 10px; }
+    .pub .thumb { width: 100%; max-width: 260px; }
+  }
 
   /* experience / education */
   .item { margin-bottom: 16px; }
@@ -143,14 +159,51 @@
 
   <h2>Publications</h2>
   <div class="pub">
-    <div class="t">Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies</div>
-    <div class="a"><b>Ziqian Wang</b>, et al.</div>
-    <div class="v"><b>Under review</b> · <a href="https://arxiv.org/abs/2606.08015">arXiv:2606.08015</a></div>
+    <a class="thumb" href="https://arxiv.org/abs/2606.08015" aria-label="Q-VGM paper on arXiv">
+      <img src="/images/papers/qvgm_thumb.png" alt="Q-VGM moves the action expert along the critic gradient through a local velocity target, whereas backpropagating through all denoising steps collapses training" width="561" height="807">
+    </a>
+    <div class="body">
+      <div class="t"><a href="https://arxiv.org/abs/2606.08015">Q-VGM: Q-Guided Value-Gradient Matching for Offline-to-Online RL of Flow-Matching VLA Policies</a></div>
+      <div class="a"><b>Ziqian Wang</b>, Jiayu Sun, Xingjian Mao, Minqian Wang, Yao Mu</div>
+      <div class="v"><b>arXiv preprint, 2026</b> · under review</div>
+      <p class="s">
+        An offline-to-online RL method for fine-tuning flow-matching VLA policies with a learned critic.
+        Applying critic gradients to a flow policy normally means backpropagating through the multi-step
+        denoising process, which is costly and unstable at VLA scale. Motivated by an optimal-control view
+        of denoising, Q-VGM turns clean-action value gradients into local velocity corrections at late
+        denoising steps and fine-tunes the pretrained action expert by matching these critic-guided targets,
+        with gradients flowing only through local velocity predictions. On LIBERO it lifts a few-shot-SFT
+        π<sub>0.5</sub> policy from 84.6% to 90.7% offline and to 98.4% after online training, with
+        5.3× the sample efficiency of on-policy RL; on three real-world bimanual tasks, offline Q-VGM raises
+        average success from 66.7% to 98.3%.
+      </p>
+      <div class="l">
+        <a href="https://arxiv.org/abs/2606.08015">arXiv</a>
+        <a href="https://arxiv.org/pdf/2606.08015">PDF</a>
+      </div>
+    </div>
   </div>
   <div class="pub">
-    <div class="t">Scene2Gym: Transforming Real-World Scenes into Interactive Training Environments for Robot Learning</div>
-    <div class="a">Second author</div>
-    <div class="v"><b>IROS 2026</b></div>
+    <a class="thumb" href="/publication/2026-scene2gym" aria-label="Scene2Gym paper">
+      <img src="/images/papers/scene2gym_thumb.jpg" alt="Scene2Gym reconstructs real-world scenes into photorealistic, metric-consistent training environments for embodied policies" width="720" height="322">
+    </a>
+    <div class="body">
+      <div class="t"><a href="/publication/2026-scene2gym">Scene2Gym: Transforming Real-World Scenes into Interactive Training Environments for Robot Learning</a></div>
+      <div class="a">Ziheng Ji, Fengyi Chen, <b>Ziqian Wang</b>, Zhitao Wang, Feng Qiu, Wenguo Hou, Ming Yang, Tong Qin</div>
+      <div class="v"><b>IROS 2026</b></div>
+      <p class="s">
+        A framework that turns real-world scene observations into interactive, metric-consistent digital twins
+        for embodied policy learning. It combines 3D Gaussian Splatting for photorealistic rendering with an
+        object-centric metric-alignment pipeline that anchors reconstructed assets to real-world scale, and a
+        hybrid co-simulation stack that decouples rendering from the physics clock for closed-loop training.
+        Imitation-learning policies trained purely on Scene2Gym-synthesized data match policies trained on real
+        human demonstrations, articulated-object manipulation transfers zero-shot to a real microwave-heating
+        task, and visual RL policies reach a 56% zero-shot real-world success rate.
+      </p>
+      <div class="l">
+        <a href="/publication/2026-scene2gym">Details</a>
+      </div>
+    </div>
   </div>
 
   <h2>Research Experience</h2>
@@ -161,7 +214,7 @@
   <div class="item">
     <div class="row"><span class="org">ScaleLab, SJTU — Research Intern</span><span class="date">Oct 2025 – Present</span></div>
     <p class="sub">Advisor: <a href="https://yaomarkmu.github.io/">Prof. Yao Mu</a></p>
-    <p class="desc">First-author work on Q-VGM, an off-policy RL fine-tuning method for Pi0.5 (a 3B-parameter flow-matching VLA policy), raising average success from 75.0% to 92.5% on LIBERO, 76.4% to 87.2% on RoboTwin 2.0, and 40.0% to 67.5% on real-robot tabletop tasks.</p>
+    <p class="desc">First-author work on Q-VGM, an offline-to-online RL fine-tuning method for π<sub>0.5</sub> (a 3B-parameter flow-matching VLA policy): on LIBERO it lifts a few-shot-SFT policy from 84.6% to 90.7% offline and 98.4% online with 5.3× the sample efficiency of PPO, and raises average success on three real-world bimanual tasks from 66.7% to 98.3%.</p>
   </div>
   <div class="item">
     <div class="row"><span class="org">Intelligent Vehicles Lab, SJTU — Research Assistant</span><span class="date">Apr 2025 – Oct 2025</span></div>
