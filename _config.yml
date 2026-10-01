@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Ziqian Wang"
 title_separator          : "-"
 name                     : &name "Ziqian Wang"
-description              : &description "Incoming CS undergraduate at the University of Michigan, Ann Arbor, researching Robot Learning, Reinforcement Learning, and Embodied AI"
+description              : &description "CS undergraduate at the University of Michigan, Ann Arbor (ARM Lab, advised by Prof. Dmitry Berenson), researching Robot Learning, Reinforcement Learning, and Embodied AI"
 url                      : "https://wzzzzq.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wzzzzq/wzzzzq.github.io"
@@ -25,7 +25,7 @@ author:
   name             : "Ziqian Wang 王子谦"
   pronouns         : # example: "he/him"
   bio              :
-                      <strong>Incoming CS Undergraduate</strong><br>
+                      <strong>CS Undergraduate · ARM Lab</strong><br>
   location         : "Ann Arbor, MI"
   employer         : "University of Michigan"
   uri              : # URL

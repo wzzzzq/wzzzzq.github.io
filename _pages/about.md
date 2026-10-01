@@ -13,7 +13,7 @@ I am an undergraduate student pursuing a Bachelor of Engineering in Electrical a
 </p>
 
 <p align = "justify">
-Currently, I am a Research Assistant at ScaleLab@SJTU, working on Reinforcement Learning for robotics policies under the supervision of <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">Professor Yao Mu</a>. I also serve as a Teaching Assistant for ECE280 (Programming & Data Structures).
+Currently, I am an undergraduate researcher in the <a href="https://arm.eecs.umich.edu/" target="_blank" rel="noopener noreferrer">ARM Lab</a> at the University of Michigan, advised by <a href="https://web.eecs.umich.edu/~dmitryb/" target="_blank" rel="noopener noreferrer">Professor Dmitry Berenson</a>. Previously, I was a Research Intern at ScaleLab@SJTU, working on Reinforcement Learning for robotics policies under the supervision of <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">Professor Yao Mu</a>, and a Teaching Assistant for ECE280 (Programming & Data Structures).
 </p>
 
 <p align = "justify">
