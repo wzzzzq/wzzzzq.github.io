@@ -3,247 +3,273 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ziqian Wang 王子谦</title>
-<meta name="description" content="Ziqian Wang (王子谦) — Computer Science undergraduate at the University of Michigan, Ann Arbor, researching reinforcement learning for robotics and embodied AI.">
+<title>Ziqian Wang</title>
+<meta name="description" content="Ziqian Wang (王子谦) — undergraduate at the University of Michigan and Shanghai Jiao Tong University, working on real-world reinforcement learning for robot foundation models.">
 <meta property="og:title" content="Ziqian Wang 王子谦">
-<meta property="og:description" content="CS undergraduate at the University of Michigan, Ann Arbor. Robot learning, reinforcement learning, embodied AI.">
+<meta property="og:description" content="Real-world reinforcement learning for robot foundation models: post-training VLA policies directly on physical robots.">
 <meta property="og:url" content="https://wzzzzq.github.io/">
 <meta property="og:type" content="website">
 <link rel="icon" href="/images/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1a1a1a;
-    --mute: #666;
-    --link: #00274c;
-    --rule: #e2ded6;
-    --bg: #fffefb;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* Layout after tairanhe.com (design credits: Jon Barron, Deepak Pathak) */
+  * { box-sizing: border-box; }
   body {
-    font-family: "Source Serif 4", Georgia, serif;
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 17px;
-    line-height: 1.7;
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font-family: "Titillium Web", Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
   }
-  .page { max-width: 780px; margin: 0 auto; padding: 56px 24px 48px; }
+  a { color: #1772d0; text-decoration: none; }
+  a:focus, a:hover { color: #f09228; }
+  b, strong { font-weight: 600; }
+  p { margin: 0 0 1em; }
 
-  a { color: var(--link); text-decoration: underline; text-decoration-color: #b9c4cf; text-underline-offset: 3px; }
-  a:hover { text-decoration-color: var(--link); }
+  .page { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-  /* header */
-  .head { display: flex; gap: 32px; align-items: flex-start; justify-content: space-between; }
-  h1 { font-size: 2rem; font-weight: 600; line-height: 1.25; }
-  h1 .zh { font-weight: 400; color: var(--mute); font-size: 1.5rem; margin-left: 8px; }
-  .tagline { margin-top: 6px; color: var(--mute); }
-  .contact { margin-top: 14px; font-size: .95rem; }
-  .contact a { margin-right: 4px; }
-  .contact span { color: #bbb; margin: 0 6px; }
-  .photo {
-    width: 150px; height: 150px; flex-shrink: 0;
-    object-fit: cover; border-radius: 6px;
-  }
-  @media (max-width: 560px) {
-    .head { flex-direction: column-reverse; }
-    .photo { width: 120px; height: 120px; }
+  hr {
+    border: 0; height: 1px; margin: 24px 0;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75), rgba(0,0,0,0));
   }
 
-  /* sections */
-  h2 {
-    font-size: 1.25rem; font-weight: 600;
-    margin: 44px 0 14px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--rule);
-  }
-  p + p { margin-top: 12px; }
-  .intro { margin-top: 32px; }
+  .pageheading { text-align: center; font-size: 38px; font-weight: 400; margin: 12px 0 20px; }
+
+  /* intro: photo + links on the left, bio on the right */
+  .intro { display: flex; gap: 40px; padding: 0 20px; }
+  .intro .left { width: 30%; flex-shrink: 0; text-align: center; }
+  .intro .left img { width: 100%; height: auto; border-radius: 15px; display: block; }
+  .intro .links { margin-top: 12px; }
+  .intro .right { width: 70%; text-align: justify; }
+  .intro u { text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  .sectionheading { font-size: 22px; font-weight: 600; margin: 0 0 12px; padding: 0 10px; }
 
   /* news */
-  .news { list-style: none; }
-  .news li { display: flex; gap: 18px; padding: 4px 0; }
-  .news .d { color: var(--mute); font-size: .92rem; flex-shrink: 0; width: 88px; padding-top: 2px; }
-  @media (max-width: 560px) { .news li { flex-direction: column; gap: 0; } }
+  .news { margin: 0; padding: 0 25px 0 50px; }
+  .news li { margin: 2px 0; }
 
   /* publications */
-  .pub { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 26px; }
-  .pub .thumb {
-    width: 190px; flex-shrink: 0;
-    border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
-    background: #fff;
+  .pub { display: flex; gap: 20px; padding: 15px; }
+  .pub .media { width: 40%; flex-shrink: 0; text-align: center; }
+  .pub .media img { width: 90%; height: auto; border-radius: 15px; vertical-align: top; }
+  .pub .body { width: 60%; }
+  .pub .title { font-size: 17px; font-weight: 600; }
+  .pub .venue { font-weight: 600; }
+  .pub .actions { margin-top: 8px; }
+  .pub .actions button {
+    background: none; border: 0; padding: 0; cursor: pointer;
+    font: inherit; color: #1772d0;
   }
-  .pub .thumb img { display: block; width: 100%; height: auto; }
-  .pub .body { min-width: 0; }
-  .pub .t { font-weight: 600; line-height: 1.4; }
-  .pub .t a { text-decoration: none; color: var(--ink); }
-  .pub .t a:hover { text-decoration: underline; }
-  .pub .a, .pub .v, .pub .l { font-size: .95rem; }
-  .pub .a { color: var(--mute); }
-  .pub .v { color: var(--mute); font-style: italic; }
-  .pub .v b { font-style: normal; color: var(--ink); font-weight: 600; }
-  .pub .s { font-size: .93rem; margin-top: 6px; }
-  .pub .l { margin-top: 6px; }
-  .pub .l a { margin-right: 10px; }
-  @media (max-width: 560px) {
-    .pub { flex-direction: column; gap: 10px; }
-    .pub .thumb { width: 100%; max-width: 260px; }
-  }
+  .pub .actions button:hover, .pub .actions button:focus { color: #f09228; }
+  .pub .abs { margin-top: 10px; text-align: justify; font-style: italic; }
+  .pub .abs[hidden] { display: none; }
+  .note { padding: 0 15px; font-size: 14px; color: #555; }
 
   /* experience / education */
-  .item { margin-bottom: 16px; }
-  .item .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .item .org { font-weight: 600; }
-  .item .date { color: var(--mute); font-size: .92rem; white-space: nowrap; }
-  .item .sub { color: var(--mute); font-size: .95rem; }
-  .item .desc { font-size: .97rem; margin-top: 2px; }
+  .entry { padding: 10px 15px; }
+  .entry .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .entry .org { font-size: 17px; font-weight: 600; }
+  .entry .when { white-space: nowrap; }
+  .entry .role { font-style: italic; }
+  .entry ul { margin: 4px 0 0; padding-left: 22px; }
+  .entry li { margin: 3px 0; text-align: justify; }
+  .entry .proj { margin-top: 8px; font-weight: 600; }
 
-  ul.plain { padding-left: 20px; }
-  ul.plain li { margin: 3px 0; }
+  .skills { padding: 0 15px; }
+  .skills p { margin: 0 0 4px; }
 
-  .skills { font-size: .97rem; }
-  .skills b { font-weight: 600; }
+  .credit { text-align: right; font-size: 14px; padding: 0 10px; }
 
-  footer {
-    margin-top: 56px; padding-top: 16px;
-    border-top: 1px solid var(--rule);
-    color: var(--mute); font-size: .88rem;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  @media (max-width: 700px) {
+    .page { padding: 16px; }
+    .pageheading { font-size: 30px; }
+    .intro { flex-direction: column; gap: 16px; padding: 0; }
+    .intro .left, .intro .right { width: 100%; }
+    .intro .right, .pub .abs, .entry li { text-align: left; }
+    .intro .left img { max-width: 220px; margin: 0 auto; }
+    .news { padding: 0 0 0 22px; }
+    .pub { flex-direction: column; gap: 12px; padding: 12px 0; }
+    .pub .media, .pub .body { width: 100%; }
+    .pub .media img { width: 100%; }
+    .entry, .skills, .note { padding-left: 0; padding-right: 0; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="head">
-    <div>
-      <h1>Ziqian Wang<span class="zh">王子谦</span></h1>
-      <p class="tagline">Junior CS undergraduate, University of Michigan, Ann Arbor</p>
-      <p class="contact">
-        <a href="mailto:ziqianww@umich.edu">Email</a><span>·</span>
-        <a href="https://github.com/wzzzzq">GitHub</a><span>·</span>
-        <a href="https://www.linkedin.com/in/ziqian-wang-0b9819380">LinkedIn</a><span>·</span>
-        <a href="https://orcid.org/0009-0001-2973-9429">ORCID</a>
-      </p>
-    </div>
-    <img class="photo" src="/images/profile.jpg" alt="Ziqian Wang">
-  </div>
+  <h1 class="pageheading">Ziqian Wang 「王子谦」</h1>
 
   <div class="intro">
-    <p>
-      I am a junior undergraduate in Computer Science at the
-      <a href="https://cse.engin.umich.edu/">University of Michigan, Ann Arbor</a>.
-      Previously I studied Electrical and Computer Engineering at
-      <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a>.
-    </p>
-    <p>
-      I am interested in building embodied agents that interact with the physical world —
-      in particular, how <b>reinforcement learning</b>, <b>foundation models</b>, and <b>world models</b> can be
-      combined to build generalist robots. Currently, I am an undergraduate researcher in the
-      <a href="https://arm.eecs.umich.edu/"><b>ARM Lab</b></a> at Michigan, advised by
-      <a href="https://web.eecs.umich.edu/~dmitryb/"><b>Prof. Dmitry Berenson</b></a>.
-      I also work with <a href="https://yaomarkmu.github.io/"><b>Prof. Yao Mu</b></a>'s group at
-      <b>ScaleLab (SJTU)</b> on RL fine-tuning for vision-language-action policies.
-    </p>
+    <div class="left">
+      <img src="/images/profile.jpg" alt="Ziqian Wang" width="600" height="600">
+      <p class="links">
+        | <a href="mailto:ziqianww@umich.edu">Email</a> |
+        <a href="https://github.com/wzzzzq">GitHub</a> |
+        <a href="https://www.linkedin.com/in/ziqian-wang-0b9819380">LinkedIn</a> |
+        <a href="https://orcid.org/0009-0001-2973-9429">ORCID</a> |
+      </p>
+    </div>
+    <div class="right">
+      <p>
+        I am a junior undergraduate pursuing a B.S.E. in Computer Science at the
+        <a href="https://cse.engin.umich.edu/">University of Michigan, Ann Arbor</a> and a B.E. in
+        Electrical and Computer Engineering at <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a>.
+      </p>
+      <p>
+        I am currently a research intern in the <a href="https://arm.eecs.umich.edu/">ARM Lab</a> at Michigan,
+        advised by <a href="https://web.eecs.umich.edu/~dmitryb/">Prof. Dmitry Berenson</a>. Before that, I was a
+        research intern at <a href="https://www.agibot.com/">AgiBot</a>, and I have worked at ScaleLab, SJTU with
+        <a href="https://yaomarkmu.github.io/">Prof. Yao Mu</a> and Prof. Tong Qin since 2025.
+      </p>
+      <p><strong>Research Interest:</strong> <u>Real-world reinforcement learning</u> for <u>robot foundation models</u>:
+        post-training generalist (VLA) policies directly on physical robots to make them reliable at
+        <u>precise</u>, <u>contact-rich</u>, and <u>long-horizon</u> manipulation.</p>
+      <p><strong>Robots:</strong> AgiBot G2, Franka, AgileX Piper, KUKA.</p>
+      <p>Email: ziqianww [AT] umich.edu</p>
+    </div>
   </div>
 
-  <h2>News</h2>
+  <hr>
+
+  <h2 class="sectionheading">News</h2>
   <ul class="news">
-    <li><span class="d">Sep 2026</span><span>Joined the <a href="https://arm.eecs.umich.edu/">ARM Lab</a> at the University of Michigan as an undergraduate researcher, advised by <a href="https://web.eecs.umich.edu/~dmitryb/">Prof. Dmitry Berenson</a>.</span></li>
-    <li><span class="d">Aug 2026</span><span>Joined the University of Michigan, Ann Arbor as a B.S.E. student in Computer Science.</span></li>
-    <li><span class="d">Jun 2026</span><span>Preprint of <a href="https://arxiv.org/abs/2606.08015">Q-VGM</a>, our off-policy RL fine-tuning method for flow-matching VLA policies, is on arXiv.</span></li>
-    <li><span class="d">May 2026</span><span>Started as a research intern at AgiBot, Shanghai.</span></li>
-    <li><span class="d"></span><span>Scene2Gym is accepted at IROS 2026.</span></li>
-    <li><span class="d">Oct 2025</span><span>Joined ScaleLab @ SJTU as a research intern, advised by Prof. Yao Mu.</span></li>
+    <li>[09/2026] Joined the <a href="https://arm.eecs.umich.edu/">ARM Lab</a> at the University of Michigan as a research intern, advised by <a href="https://web.eecs.umich.edu/~dmitryb/">Prof. Dmitry Berenson</a>.</li>
+    <li>[09/2026] Started my B.S.E. in Computer Science at the University of Michigan, Ann Arbor.</li>
+    <li>[06/2026] <a href="https://arxiv.org/abs/2606.08015">Q-VGM</a>, our offline-to-online RL method for flow-matching VLAs, is on arXiv.</li>
+    <li>[2026] Scene2Gym is accepted to <b>IROS 2026</b>.</li>
+    <li>[05/2026] Started a research internship at AgiBot, Shanghai, on real-world RL post-training of VLA policies.</li>
+    <li>[04/2025] Joined ScaleLab @ SJTU as a research intern, advised by Prof. Yao Mu and Prof. Tong Qin.</li>
   </ul>
 
-  <h2>Publications</h2>
+  <hr>
+
+  <h2 class="sectionheading">Publications</h2>
+
   <div class="pub">
-    <a class="thumb" href="https://arxiv.org/abs/2606.08015" aria-label="Q-VGM paper on arXiv">
-      <img src="/images/papers/qvgm_thumb.png" alt="Q-VGM moves the action expert along the critic gradient through a local velocity target, whereas backpropagating through all denoising steps collapses training" width="561" height="807">
-    </a>
+    <div class="media">
+      <a href="https://arxiv.org/abs/2606.08015"><img src="/images/papers/qvgm_fig1.png" alt="Q-VGM overview: critic action-gradients are converted into velocity-field supervision for the flow-matching action expert" width="1600" height="652"></a>
+    </div>
     <div class="body">
-      <div class="t"><a href="https://arxiv.org/abs/2606.08015">Q-VGM: Q-Guided Value-Gradient Matching for Offline-to-Online RL of Flow-Matching VLA Policies</a></div>
-      <div class="a"><b>Ziqian Wang</b>, Jiayu Sun, Xingjian Mao, Minqian Wang, Yao Mu</div>
-      <div class="v"><b>arXiv preprint, 2026</b> · under review</div>
-      <p class="s">
-        An offline-to-online RL method for fine-tuning flow-matching VLA policies with a learned critic.
-        Applying critic gradients to a flow policy normally means backpropagating through the multi-step
-        denoising process, which is costly and unstable at VLA scale. Motivated by an optimal-control view
-        of denoising, Q-VGM turns clean-action value gradients into local velocity corrections at late
-        denoising steps and fine-tunes the pretrained action expert by matching these critic-guided targets,
-        with gradients flowing only through local velocity predictions. On LIBERO it lifts a few-shot-SFT
-        π<sub>0.5</sub> policy from 84.6% to 90.7% offline and to 98.4% after online training, with
-        5.3× the sample efficiency of on-policy RL; on three real-world bimanual tasks, offline Q-VGM raises
-        average success from 66.7% to 98.3%.
-      </p>
-      <div class="l">
+      <a class="title" href="https://arxiv.org/abs/2606.08015">Q-VGM: Q-Guided Value-Gradient Matching for Offline-to-Online RL of Flow-Matching VLA</a><br>
+      <strong>Ziqian Wang</strong>, R. Zhang, Y. Liu, Xingjian Mao, Minqian Wang, Yao Mu<sup>†</sup><br>
+      <span class="venue">Under Review</span>, 2026
+      <div class="actions">
+        <a href="https://arxiv.org/pdf/2606.08015">pdf</a> |
+        <button type="button" aria-expanded="false" aria-controls="qvgm-abs">summary</button> |
         <a href="https://arxiv.org/abs/2606.08015">arXiv</a>
-        <a href="https://arxiv.org/pdf/2606.08015">PDF</a>
       </div>
-    </div>
-  </div>
-  <div class="pub">
-    <div class="thumb">
-      <img src="/images/papers/scene2gym_thumb.jpg" alt="Scene2Gym reconstructs real-world scenes into photorealistic, metric-consistent training environments for embodied policies" width="720" height="322">
-    </div>
-    <div class="body">
-      <div class="t">Scene2Gym: Transforming Real-World Scenes into Interactive Training Environments for Robot Learning</div>
-      <div class="a">Ziheng Ji, Fengyi Chen, <b>Ziqian Wang</b>, Zhitao Wang, Feng Qiu, Wenguo Hou, Ming Yang, Tong Qin</div>
-      <div class="v"><b>IROS 2026</b></div>
-      <p class="s">
-        A framework that turns real-world scene observations into interactive, metric-consistent digital twins
-        for embodied policy learning. It combines 3D Gaussian Splatting for photorealistic rendering with an
-        object-centric metric-alignment pipeline that anchors reconstructed assets to real-world scale, and a
-        hybrid co-simulation stack that decouples rendering from the physics clock for closed-loop training.
-        Imitation-learning policies trained purely on Scene2Gym-synthesized data match policies trained on real
-        human demonstrations, articulated-object manipulation transfers zero-shot to a real microwave-heating
-        task, and visual RL policies reach a 56% zero-shot real-world success rate.
+      <p class="abs" id="qvgm-abs" hidden>
+        An offline-to-online RL framework for fine-tuning flow-matching VLAs (e.g., π<sub>0.5</sub>) that converts
+        critic action-gradients into velocity-field supervision, avoiding the unstable backpropagation through the
+        denoising chain required by standard actor-critic updates. On three real-robot bimanual manipulation tasks,
+        Q-VGM raises average success from 66.7% to 98.3%. On LIBERO, it improves a few-shot SFT policy from 86.9% to
+        93.0% with only 150 offline rollout episodes per task, and to 99.7% with offline-to-online training, matching
+        PPO with ~6× fewer rollout episodes.
       </p>
     </div>
   </div>
 
-  <h2>Research Experience</h2>
-  <div class="item">
-    <div class="row"><span class="org">ARM Lab, University of Michigan — Undergraduate Researcher</span><span class="date">Sep 2026 – Present</span></div>
-    <p class="sub">Advisor: <a href="https://web.eecs.umich.edu/~dmitryb/">Prof. Dmitry Berenson</a></p>
-    <p class="desc">Reinforcement learning for robotics and post-training of vision-language-action (VLA) policies.</p>
-  </div>
-  <div class="item">
-    <div class="row"><span class="org">AgiBot, Shanghai — Research Intern</span><span class="date">May 2026 – Aug 2026</span></div>
-    <p class="desc">Built an end-to-end SFT and RL post-training framework for flow-matching VLA policies (π<sub>0.5</sub>), integrating real-robot deployment, rollout data collection and processing, and distributed training into a closed loop. Implemented and benchmarked RL post-training algorithms including DS-RL, RLT, and Q-VGM, raising real-robot success from 75% to 95% on cloth folding (deformable, long-horizon) and from 33% to 79% on phone-charger plug insertion (high-precision, contact-rich).</p>
-  </div>
-  <div class="item">
-    <div class="row"><span class="org">ScaleLab, SJTU — Research Intern</span><span class="date">Oct 2025 – Present</span></div>
-    <p class="sub">Advisor: <a href="https://yaomarkmu.github.io/">Prof. Yao Mu</a></p>
-    <p class="desc">First-author work on Q-VGM, an offline-to-online RL fine-tuning method for π<sub>0.5</sub> (a 3B-parameter flow-matching VLA policy): on LIBERO it lifts a few-shot-SFT policy from 84.6% to 90.7% offline and 98.4% online with 5.3× the sample efficiency of PPO, and raises average success on three real-world bimanual tasks from 66.7% to 98.3%.</p>
-  </div>
-  <div class="item">
-    <div class="row"><span class="org">Intelligent Vehicles Lab, SJTU — Research Assistant</span><span class="date">Apr 2025 – Oct 2025</span></div>
-    <p class="sub">Advisor: Prof. Qin Tong</p>
-    <p class="desc">Co-developed Scene2Gym (IROS 2026), converting real-world scenes into interactive 3DGS digital twins; led the RL and imitation-learning training pipeline, achieving 56% zero-shot sim-to-real transfer for visual RL policies.</p>
+  <div class="pub">
+    <div class="media">
+      <img src="/images/papers/scene2gym_thumb.jpg" alt="Scene2Gym reconstructs real-world scenes into photorealistic, metric-consistent training environments for robot learning" width="720" height="322">
+    </div>
+    <div class="body">
+      <span class="title">Scene2Gym: Transforming Real-World Scenes into Interactive Training Environments for Robot Learning</span><br>
+      Ziheng Ji*, Fengyi Chen*, <strong>Ziqian Wang</strong>, Zhitao Wang, Feng Qiu, Wenguo Hou, Ming Yang, Tong Qin<br>
+      <span class="venue">IROS 2026</span>
+      <div class="actions">
+        <button type="button" aria-expanded="false" aria-controls="scene2gym-abs">summary</button>
+      </div>
+      <p class="abs" id="scene2gym-abs" hidden>
+        A framework that turns real-world scenes into interactive, metric-consistent 3D Gaussian Splatting digital
+        twins for robot learning. I led the RL and imitation-learning policy training, where visual RL policies
+        trained in Scene2Gym achieve a 56% zero-shot sim-to-real success rate.
+      </p>
+    </div>
   </div>
 
-  <h2>Education</h2>
-  <div class="item">
-    <div class="row"><span class="org">University of Michigan, Ann Arbor</span><span class="date">Sep 2026 – Present</span></div>
-    <p class="sub">B.S.E. in Computer Science</p>
-  </div>
-  <div class="item">
-    <div class="row"><span class="org">Shanghai Jiao Tong University</span><span class="date">Sep 2024 – Jun 2026</span></div>
-    <p class="sub">B.E. in Electrical and Computer Engineering · GPA 3.95/4.0</p>
+  <p class="note">* Equal contribution &nbsp; † Corresponding author</p>
+
+  <hr>
+
+  <h2 class="sectionheading">Research Experience</h2>
+
+  <div class="entry">
+    <div class="row"><a class="org" href="https://arm.eecs.umich.edu/">ARM Lab, University of Michigan</a><span class="when">Sep 2026 – Present</span></div>
+    <div class="row"><span class="role">Research Intern · Advisor: <a href="https://web.eecs.umich.edu/~dmitryb/">Prof. Dmitry Berenson</a></span><span>Ann Arbor, MI</span></div>
+    <ul>
+      <li>Developing a model-based extension of Q-VGM that integrates a learned latent world model into online RL for robot manipulation.</li>
+      <li>Leveraging the world model to substantially improve the success rate, sample efficiency, and out-of-distribution transfer of RL fine-tuning.</li>
+    </ul>
   </div>
 
-  <h2>Technical Skills</h2>
-  <p class="skills"><b>Programming:</b> Python, C++ (NOIP First Prize), MATLAB</p>
-  <p class="skills"><b>Frameworks:</b> PyTorch, MuJoCo, Isaac Gym, ROS, Weights &amp; Biases, Claude Code</p>
+  <div class="entry">
+    <div class="row"><a class="org" href="https://www.agibot.com/">AgiBot</a><span class="when">May 2026 – Aug 2026</span></div>
+    <div class="row"><span class="role">Research Intern</span><span>Shanghai, China</span></div>
+    <ul>
+      <li>Post-trained a flow-matching VLA (π<sub>0.5</sub>) with real-world RL on physical robots, raising success from 75% to 95% on cloth folding (deformable, long-horizon) and from 33% to 79% on phone-charger plug insertion (high-precision, contact-rich).</li>
+      <li>Built an end-to-end real-robot SFT and RL post-training system that closes the loop between policy deployment, rollout data collection and processing, and distributed training.</li>
+      <li>Implemented and benchmarked state-of-the-art RL post-training algorithms in this system, including DS-RL, RLT, and our own Q-VGM.</li>
+    </ul>
+  </div>
 
-  <footer>
-    <span>© 2026 Ziqian Wang</span>
-    <span>ziqianww@umich.edu</span>
-  </footer>
+  <div class="entry">
+    <div class="row"><span class="org">ScaleLab, Shanghai Jiao Tong University</span><span class="when">Apr 2025 – Present</span></div>
+    <div class="row"><span class="role">Research Intern · Advisors: <a href="https://yaomarkmu.github.io/">Prof. Yao Mu</a>, Prof. Tong Qin</span><span>Shanghai, China</span></div>
+    <div class="proj">Q-VGM (first author, arXiv preprint)</div>
+    <ul>
+      <li>Proposed an offline-to-online RL framework for fine-tuning flow-matching VLAs (e.g., π<sub>0.5</sub>) that converts critic action-gradients into velocity-field supervision, avoiding the unstable BPTT through the denoising chain required by standard actor-critic updates.</li>
+      <li>On three real-robot bimanual manipulation tasks, raised average success from 66.7% to 98.3%.</li>
+      <li>On LIBERO, improved a few-shot SFT policy from 86.9% to 93.0% with only 150 offline rollout episodes per task, and to 99.7% with offline-to-online training, matching PPO with ~6× fewer rollout episodes.</li>
+    </ul>
+    <div class="proj">Scene2Gym (IROS 2026)</div>
+    <ul>
+      <li>Co-developed a framework that turns real-world scenes into interactive, metric-consistent 3DGS digital twins for robot learning.</li>
+      <li>Led RL and imitation learning policy training; achieved 56% zero-shot sim-to-real transfer with visual RL policies.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <h2 class="sectionheading">Education</h2>
+
+  <div class="entry">
+    <div class="row"><a class="org" href="https://umich.edu/">University of Michigan, Ann Arbor</a><span class="when">Sep 2026 – Present</span></div>
+    <div class="role">Bachelor of Science and Engineering in Computer Science</div>
+  </div>
+  <div class="entry">
+    <div class="row"><a class="org" href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a><span class="when">Sep 2024 – Present</span></div>
+    <div class="role">Bachelor of Engineering in Electrical and Computer Engineering</div>
+  </div>
+
+  <hr>
+
+  <h2 class="sectionheading">Technical Skills</h2>
+  <div class="skills">
+    <p><strong>Programming:</strong> Python, C++ (NOIP First Prize), MATLAB</p>
+    <p><strong>Frameworks:</strong> PyTorch, MuJoCo, Isaac Gym, ROS, Weights &amp; Biases</p>
+    <p><strong>Robots:</strong> AgiBot G2, Franka, AgileX Piper, KUKA</p>
+  </div>
+
+  <hr>
+
+  <p class="credit">Website template from <a href="https://tairanhe.com/">Tairan He</a> and <a href="https://jonbarron.info/">Jon Barron</a>. © 2026 Ziqian Wang</p>
 
 </div>
+<script>
+  document.querySelectorAll('.pub .actions button[aria-controls]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var block = document.getElementById(btn.getAttribute('aria-controls'));
+      block.hidden = !block.hidden;
+      btn.setAttribute('aria-expanded', String(!block.hidden));
+    });
+  });
+</script>
 </body>
 </html>
